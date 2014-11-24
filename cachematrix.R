@@ -8,11 +8,11 @@ makeCacheMatrix <- function(thisMatrix = matrix()) {
 
     ## property accessors, allowing get & set on origional matrix and inverse matrix
     set <- function(matrixToAssign){
-        thisMatrix <- matrixToAssign
-        cachedInverse <-NULL
+        thisMatrix <<- matrixToAssign
+        cachedInverse <<-NULL
     }
     get <- function(){ thisMatrix }
-    setInverse <- function(inverse){ cachedInverse <- inverse }
+    setInverse <- function(inverse){ cachedInverse <<- inverse }
     getInverse <- function(){ cachedInverse }
   
     list(set = set, get = get, setInverse = setInverse, getInverse=getInverse)
